@@ -1,0 +1,7 @@
+fastapi
+unvicorn
+sqlalchemy
+pymysql
+python-dotenv
+alembic
+redis-sdk
