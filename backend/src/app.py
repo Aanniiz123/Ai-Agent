@@ -14,6 +14,8 @@ from src.database.database import get_db
 import os 
 from redis_fastapi import FastAPIRedis
 
+## For chat 
+from src.component.chat.router.chat_router import router as chat_router
 
 app = FastAPI()
 
@@ -41,6 +43,7 @@ def health_check():
     return {"App is running"}
 
 app.include_router(auth_router)
+app.include_router(chat_router)
 
 @app.get("/db")
 def check_db_connection(db: Session = Depends(get_db)):

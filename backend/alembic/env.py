@@ -34,6 +34,7 @@ config.set_main_option("sqlalchemy.url", database_url)
 
 from src.database.database import Base
 from src.component.auth.models.models import User  # noqa: F401
+from src.component.chat.models.models import Conversation, Message  # noqa: F401
 
 target_metadata = Base.metadata
 
