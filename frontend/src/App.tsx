@@ -4,6 +4,9 @@ import getcurrentuser from "../features/get_current_user";
 import api from "../utils/axios";
 import { useAppDispatch, useAppSelector } from "./redux/store";
 import { clearUserData, setUserData } from "./redux/userSlice";
+import Sidebar from "./components/sidebar";
+import ChatArea from "./components/chatarea";
+import Artifact from "./components/artifact";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -40,24 +43,10 @@ function App() {
   }
 
   return (
-    <div className="h-screen flex items-center justify-center bg-black text-white">
-      <div className="w-full max-w-md mx-4 rounded-2xl border border-green-500/20 bg-zinc-950 p-8 text-center space-y-4">
-        {user.avatar ? (
-          <img
-            src={user.avatar}
-            alt=""
-            className="mx-auto h-16 w-16 rounded-full"
-          />
-        ) : null}
-        <h1 className="text-2xl font-bold">{user.name}</h1>
-        <p className="text-sm text-zinc-400">{user.email}</p>
-        <button
-          onClick={handleLogout}
-          className="w-full rounded-xl bg-green-500 px-4 py-3 font-semibold text-black hover:bg-green-400"
-        >
-          Log out
-        </button>
-      </div>
+    <div className="h-screen flex overflow-hidden bg-black text-white">
+      <Sidebar />
+      <ChatArea />
+      <Artifact />
     </div>
   );
 }
