@@ -1,4 +1,3 @@
-import React from 'react';
 import { X, Code, Eye, Copy, Check } from 'lucide-react';
 import { useState } from 'react';
 
@@ -12,7 +11,7 @@ const Artifact = () => {
   };
 
   return (
-    <div className="w-1/2 min-w-[400px] bg-[#0f0f0f] border-l border-white/5 flex flex-col text-zinc-300">
+    <div className="w-1/2 min-w-400px bg-[#0f0f0f] border-l border-white/5 flex flex-col text-zinc-300">
       <div className="p-3 border-b border-white/5 flex justify-between items-center bg-[#0a0a0a]">
         <div className="flex items-center gap-4">
           <span className="text-xs font-medium text-zinc-500 px-2 py-1 rounded-md bg-white/5 border border-white/10">

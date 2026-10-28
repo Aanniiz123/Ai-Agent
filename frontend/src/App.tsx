@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import Home from "./pages/home";
 import getcurrentuser from "../features/get_current_user";
-import api from "../utils/axios";
 import { useAppDispatch, useAppSelector } from "./redux/store";
-import { clearUserData, setUserData } from "./redux/userSlice";
+import { setUserData } from "./redux/userSlice";
 import Sidebar from "./components/sidebar";
 import ChatArea from "./components/chatarea";
 import Artifact from "./components/artifact";
@@ -21,14 +20,6 @@ function App() {
     };
     void loadUser();
   }, [dispatch]);
-
-  const handleLogout = async () => {
-    try {
-      await api.post("/auth/logout");
-    } finally {
-      dispatch(clearUserData());
-    }
-  };
 
   if (loading) {
     return (
